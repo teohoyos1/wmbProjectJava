@@ -10,18 +10,18 @@ public class Integration {
     private Integer id;
     private String token;
     private LocalDateTime creation_date;
-    @Column(name = "id_user")
-    private Integer idUser;
+    @Column(name = "id_person")
+    private Integer idPerson;
     @ManyToOne
-    @JoinColumn(name = "id_user", insertable = false, updatable = false)
-    private User user;
+    @JoinColumn(name = "id_person", insertable = false, updatable = false)
+    private Person person;
 
-    public Integer getIdUser() {
-        return idUser;
+    public Integer getIdPerson() {
+        return idPerson;
     }
 
-    public void setIdUser(Integer idUser) {
-        this.idUser = idUser;
+    public void setIdPerson(Integer idPerson) {
+        this.idPerson = idPerson;
     }
 
     public Integer getId() {
@@ -48,11 +48,12 @@ public class Integration {
         this.creation_date = creation_date;
     }
 
-    public User getId_user() {
-        return user;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setId_user(User id_user) {
-        this.user = id_user;
+    public void setPerson(Person person) {
+        this.person = person;
     }
+
 }

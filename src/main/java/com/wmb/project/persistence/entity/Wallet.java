@@ -11,15 +11,15 @@ public class Wallet {
     private String name;
     private Integer balance;
 
-    @Column(name = "id_user")
-    private Integer idUser;
+    @Column(name = "id_person")
+    private Integer idPerson;
 
     @Column(name = "id_bank")
     private Integer idBank;
 
     @ManyToOne
-    @JoinColumn(name = "id_user", insertable = false, updatable = false)
-    private User user;
+    @JoinColumn(name = "id_person", insertable = false, updatable = false)
+    private Person person;
 
     @ManyToOne
     @JoinColumn(name = "id_bank", insertable = false, updatable = false)
@@ -52,12 +52,12 @@ public class Wallet {
         this.balance = balance;
     }
 
-    public Integer getIdUser() {
-        return idUser;
+    public Integer getIdPerson() {
+        return idPerson;
     }
 
-    public void setIdUser(Integer idUser) {
-        this.idUser = idUser;
+    public void setIdPerson(Integer idPerson) {
+        this.idPerson = idPerson;
     }
 
     public Integer getIdBank() {
@@ -74,5 +74,21 @@ public class Wallet {
 
     public void setMovement_wallet(List<Movement_wallet> movement_wallet) {
         this.movement_wallet = movement_wallet;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public Bank getBank() {
+        return bank;
+    }
+
+    public void setBank(Bank bank) {
+        this.bank = bank;
     }
 }

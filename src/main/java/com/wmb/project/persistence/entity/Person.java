@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class User {
+public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -15,10 +15,10 @@ public class User {
     private String phone;
     private String password;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "person")
     private List<Wallet> wallet;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "person")
     private List<Integration> integration;
 
     public Integer getId() {

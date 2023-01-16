@@ -73,4 +73,20 @@ public class Movement_wallet {
     public void setIdWallet(Integer idWallet) {
         this.idWallet = idWallet;
     }
+
+    public Payment_category getPayment_category() {
+        return payment_category;
+    }
+
+    public void setPayment_category(Payment_category payment_category) {
+        this.payment_category = payment_category;
+    }
+
+    public Wallet getWallet() {
+        return wallet;
+    }
+
+    public void setWallet(Wallet wallet) {
+        this.wallet = wallet;
+    }
 }

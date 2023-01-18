@@ -10,4 +10,5 @@ public interface BankDRepository {
     Optional<BankD> getBank(int bankId);
     BankD save(BankD bankD);
     void delete(int bankId);
+    BankD update(BankD bankD);
 }

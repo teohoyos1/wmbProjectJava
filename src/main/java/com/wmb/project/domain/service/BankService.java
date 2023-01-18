@@ -32,4 +32,8 @@ public class BankService {
             return  true;
         }).orElse(false);
     }
+
+    public BankD update(BankD bankD){
+        return bankDRepository.save(bankD);
+    }
 }

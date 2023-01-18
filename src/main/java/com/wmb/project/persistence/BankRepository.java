@@ -32,11 +32,17 @@ public class BankRepository implements BankDRepository {
     @Override
     public BankD save(BankD bankD) {
         Bank bank = bankMapper.toBank(bankD);
-        return bankMapper.toBankD(bank);
+        return bankMapper.toBankD(bankCrudRepository.save(bank));
     }
 
     @Override
     public void delete(int bankId) {
         bankCrudRepository.deleteById(bankId);
+    }
+
+    @Override
+    public BankD update(BankD bankD) {
+        Bank bank = bankMapper.toBank(bankD);
+        return bankMapper.toBankD(bankCrudRepository.save(bank));
     }
 }

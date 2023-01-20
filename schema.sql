@@ -65,7 +65,6 @@ CREATE TABLE IF NOT EXISTS Movement_wallet
 	  ON DELETE CASCADE
 );
 
-
 CREATE TABLE IF NOT EXISTS Integration
 (
     id serial NOT NULL,

@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  wmb-project-container:
+    image: wmb-project-docker-compose
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /data/wmb-project-container
+    depends_on:
+      - db
+    ports:
+      - '8080:8080'
+
+  db:
+    image: postgres:15.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_DB:wmb-project
+      - POSTGRES_PASSWORD:admin
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+    links:
+      - wmb-project-container
+volumes:
+  db:
+    driver: local
